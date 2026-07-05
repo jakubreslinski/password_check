@@ -1,11 +1,12 @@
 [project]
 name = "password-check"
 version = "0.1.0"
-description = "Add your description here"
+description = "Microservice for evaluating password strength"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "fastapi>=0.139.0",
-    "pydantic>=2.13.4",
+    "pydantic[email]>=2.13.4",
+    "uvicorn>=0.50.0",
     "zxcvbn>=4.5.0",
 ]
