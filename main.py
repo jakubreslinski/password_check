@@ -38,6 +38,7 @@ async def evaluate_password(payload: PasswordRequest):
         results['feedback']['warning'] = "The password cannot contain your username or email."
         results['feedback']['suggestions'].append("Please choose a password completely unrelated to your personal data.")
 
+    # Additional check to ensure password length is at least 8 characters
     if len(password_lower)<8:
         results['score'] = 0
         results['feedback']['warning'] = "The password is too short."
@@ -47,6 +48,8 @@ async def evaluate_password(payload: PasswordRequest):
     has_up = any(char.isupper() for char in payload.password)
     has_num = any(char.isdigit() for char in payload.password)
     has_special = any(not char.isalnum() for char in payload.password)
+
+    # Additional check to ensure password contains a mix of character types
     if not has_low or not has_up or not has_num or not has_special  :
         if results['score'] > 2:
             results['score'] = 2
