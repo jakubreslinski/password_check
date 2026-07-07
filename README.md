@@ -5,6 +5,14 @@
 1. **`zxcvbn`** – A library created by the team at Dropbox. It is a robust password strength estimator that takes into account over 30k common passwords, names, surnames, popular English words, patterns like dates, repeats or sequences, and l33t speak.
 2. **Custom security rules** – My additional checks that are not natively included in the `zxcvbn` function: enforcing a minimal number of characters, requiring different types of characters (uppercase, lowercase, digits, symbols), and strictly blocking passwords that directly include the user's username or email address.
 
+Based on combined evaluation, API returns score ranging from 0 to 4, along with suggestions and warnings about the password.
+
+- **0** – Very Weak 
+- **1** – Weak
+- **2** – Fair
+- **3** – Strong
+- **4** – Very Strong
+
 ## How to run project
 
 ### Option 1: Docker
