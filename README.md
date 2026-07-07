@@ -48,7 +48,7 @@ uv sync
 3. Start server
 
 ```bash
-python main.py
+uv run python main.py
 ```
 
 ## API Documentation and Usage
@@ -76,5 +76,5 @@ curl -X POST "http://localhost:8000/api/v1/evaluate" \
 To run automated tests, you need local Python environment. Once setup, run this command
 
 ```bash
-pytest
+uv run pytest
 ```
